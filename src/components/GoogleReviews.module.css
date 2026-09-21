@@ -1,0 +1,114 @@
+.scoreBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 28px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+[data-theme="dark"] .scoreBar {
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+.scoreLeft { display: flex; align-items: center; gap: 14px; }
+
+.scoreNum {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1;
+}
+
+[data-theme="dark"] .scoreNum { color: var(--text); }
+
+.stars { display: flex; gap: 3px; }
+.starFilled { color: var(--gold); font-size: 1.1rem; }
+.starEmpty  { color: var(--border); font-size: 1.1rem; }
+
+.scoreCount { font-size: 0.85rem; color: var(--text-secondary); }
+
+.googleBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.18s;
+}
+.googleBtn:hover { border-color: #4285F4; box-shadow: 0 2px 8px rgba(66,133,244,0.15); }
+
+/* Carousel */
+.carousel {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--teal);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+[data-theme="dark"] .card { background: var(--bg); }
+
+.cardActive { z-index: 1; }
+
+.text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-style: italic;
+  margin: 12px 0 20px;
+}
+
+.meta { display: flex; align-items: center; gap: 12px; }
+
+.avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.name { display: block; font-weight: 600; font-size: 0.92rem; color: var(--text); }
+.time { font-size: 0.8rem; color: var(--text-secondary); }
+
+/* Dots */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.dotActive { background: var(--teal); transform: scale(1.3); }
