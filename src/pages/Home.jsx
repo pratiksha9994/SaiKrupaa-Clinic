@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useLang } from '../context/LangContext'
+import { useLang } from '../Context/Langcontext'
 import GoogleReviews from '../components/GoogleReviews'
 import styles from './Home.module.css'
 

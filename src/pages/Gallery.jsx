@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useLang } from '../context/LangContext'
+import { useLang } from '../Context/Langcontext'
 import styles from './Gallery.module.css'
 
 // Placeholder photos using Unsplash medical/clinic images

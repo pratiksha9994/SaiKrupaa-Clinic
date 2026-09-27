@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 
-const ThemeContext = createContext()
+const Themecontext = createContext(null)
 
 export function ThemeProvider({ children }) {
   const [dark, setDark] = useState(() => {
@@ -8,17 +8,31 @@ export function ThemeProvider({ children }) {
   })
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light')
+    document.documentElement.setAttribute(
+      'data-theme',
+      dark ? 'dark' : 'light'
+    )
+
     localStorage.setItem('theme', dark ? 'dark' : 'light')
   }, [dark])
 
+  const toggle = () => {
+    setDark(prev => !prev)
+  }
+
   return (
-    <ThemeContext.Provider value={{ dark, toggle: () => setDark(d => !d) }}>
+    <Themecontext.Provider value={{ dark, toggle }}>
       {children}
-    </ThemeContext.Provider>
+    </Themecontext.Provider>
   )
 }
 
 export function useTheme() {
-  return useContext(ThemeContext)
+  const Context = useContext(Themecontext)
+
+  if (!Context) {
+    throw new Error('useTheme must be used inside ThemeProvider')
+  }
+
+  return Context
 }

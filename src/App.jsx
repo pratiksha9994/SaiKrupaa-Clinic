@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ThemeProvider } from './context/ThemeContext'
-import { LangProvider } from './context/LangContext'
+import { ThemeProvider } from './Context/Themecontext'
+import { LangProvider } from './Context/Langcontext'
+
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+
 import Home from './pages/Home'
 import Services from './pages/Services'
 import Doctors from './pages/Doctors'
@@ -16,6 +18,7 @@ function App() {
       <LangProvider>
         <BrowserRouter>
           <Navbar />
+
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -26,6 +29,7 @@ function App() {
               <Route path="/gallery" element={<Gallery />} />
             </Routes>
           </main>
+
           <Footer />
 
           {/* WhatsApp Floating Button */}
@@ -50,8 +54,12 @@ function App() {
               zIndex: 999,
               transition: 'transform 0.2s',
             }}
-            onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
-            onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+            onMouseEnter={e => {
+              e.currentTarget.style.transform = 'scale(1.1)'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.transform = 'scale(1)'
+            }}
           >
             💬
           </a>

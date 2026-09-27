@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLang } from '../context/LangContext'
+import { useLang } from '../Context/Langcontext'
 import styles from './GoogleReviews.module.css'
 
 // Place ID extracted from Google Maps URL

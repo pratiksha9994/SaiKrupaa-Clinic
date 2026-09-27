@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useLang } from '../context/LangContext'
+import { useLang } from '../Context/Langcontext'
 import styles from './Footer.module.css'
 
 function Footer() {
